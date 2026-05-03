@@ -1,31 +1,40 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import Script from "next/script";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
   title: "North Signal",
-  description: "Clareza que vira demanda.",
+  description: "Onde autoridade encontra crescimento.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${inter.variable} ${lora.variable} bg-black text-white`}>
+    <html lang="pt-BR">
+      <body className={`${inter.className} bg-black text-white`}>
         {children}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RXCC50JJSK"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RXCC50JJSK');
+          `}
+        </Script>
       </body>
     </html>
   );
