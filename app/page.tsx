@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Accessibility,
   Volume2,
-  Globe,
   Languages,
   MessageCircle,
   X,
@@ -24,6 +23,9 @@ const sans = Inter({
 });
 
 type Lang = "pt" | "en" | "es" | "it" | "fr";
+
+const whatsappLink =
+  "https://wa.me/5541987268822?text=Olá,%20quero%20entender%20como%20melhorar%20meu%20posicionamento%20com%20a%20North%20Signal";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -54,34 +56,94 @@ export default function Home() {
   const texts = useMemo(
     () => ({
       pt: {
+        pain:
+          "Empresas boas perdem clientes todos os dias por não parecerem valiosas.",
         title: "Onde autoridade encontra crescimento.",
         desc:
           "Transformamos competência real em valor percebido, presença premium e demanda qualificada.",
-        button: "Solicitar Diagnóstico",
+        button: "Quero meu diagnóstico estratégico",
+        servicesTitle: "Soluções Estratégicas",
+        forWhoTitle: "Para quem é",
+        forWho:
+          "Empresas B2B que têm um bom serviço, querem crescer, sabem que poderiam vender mais e ainda não conseguem gerar demanda consistente.",
+        notForTitle: "Não é para",
+        notFor:
+          "Quem busca fórmula mágica, seguidores vazios, compara apenas preço ou não está disposto a executar com consistência.",
+        finalTitle: "Sua próxima fase começa agora.",
+        finalText:
+          "Se sua empresa entrega muito, mas ainda não parece valer o que merece, você está perdendo mercado todos os dias.",
       },
       en: {
+        pain:
+          "Great companies lose clients every day because they do not look valuable enough.",
         title: "Where authority meets growth.",
         desc:
           "We transform real competence into perceived value, premium presence and qualified demand.",
-        button: "Request Diagnosis",
+        button: "Request strategic diagnosis",
+        servicesTitle: "Strategic Solutions",
+        forWhoTitle: "Who it is for",
+        forWho:
+          "B2B companies with strong delivery, growth ambition and the need to generate consistent demand.",
+        notForTitle: "Who it is not for",
+        notFor:
+          "Those looking for magic formulas, empty followers, price-only comparisons or no execution.",
+        finalTitle: "Your next phase starts now.",
+        finalText:
+          "If your company delivers real value but does not look as valuable as it should, you are losing market every day.",
       },
       es: {
+        pain:
+          "Buenas empresas pierden clientes todos los días por no parecer valiosas.",
         title: "Donde la autoridad encuentra crecimiento.",
         desc:
           "Transformamos competencia real en valor percibido, presencia premium y demanda calificada.",
-        button: "Solicitar Diagnóstico",
+        button: "Quiero mi diagnóstico estratégico",
+        servicesTitle: "Soluciones Estratégicas",
+        forWhoTitle: "Para quién es",
+        forWho:
+          "Empresas B2B con buen servicio, deseo de crecer y necesidad de generar demanda consistente.",
+        notForTitle: "No es para",
+        notFor:
+          "Quien busca fórmulas mágicas, seguidores vacíos, compara solo precio o no ejecuta.",
+        finalTitle: "Tu próxima fase empieza ahora.",
+        finalText:
+          "Si tu empresa entrega mucho, pero no parece valer lo que merece, pierde mercado todos los días.",
       },
       it: {
+        pain:
+          "Le buone aziende perdono clienti ogni giorno perché non sembrano abbastanza preziose.",
         title: "Dove l'autorità incontra la crescita.",
         desc:
           "Trasformiamo competenza reale in valore percepito, presenza premium e domanda qualificata.",
-        button: "Richiedi Diagnosi",
+        button: "Richiedi diagnosi strategica",
+        servicesTitle: "Soluzioni Strategiche",
+        forWhoTitle: "Per chi è",
+        forWho:
+          "Aziende B2B con un buon servizio, ambizione di crescita e bisogno di domanda consistente.",
+        notForTitle: "Non è per",
+        notFor:
+          "Chi cerca formule magiche, follower vuoti, confronta solo il prezzo o non esegue.",
+        finalTitle: "La tua prossima fase inizia ora.",
+        finalText:
+          "Se la tua azienda offre molto, ma non sembra valere ciò che merita, perde mercato ogni giorno.",
       },
       fr: {
+        pain:
+          "De bonnes entreprises perdent des clients chaque jour parce qu'elles ne semblent pas assez précieuses.",
         title: "Là où l'autorité rencontre la croissance.",
         desc:
           "Nous transformons la compétence réelle en valeur perçue, présence premium et demande qualifiée.",
-        button: "Demander Diagnostic",
+        button: "Demander un diagnostic stratégique",
+        servicesTitle: "Solutions Stratégiques",
+        forWhoTitle: "Pour qui",
+        forWho:
+          "Entreprises B2B avec une vraie expertise, une ambition de croissance et un besoin de demande régulière.",
+        notForTitle: "Ce n'est pas pour",
+        notFor:
+          "Ceux qui cherchent des formules magiques, des abonnés vides, comparent seulement le prix ou n'exécutent pas.",
+        finalTitle: "Votre prochaine phase commence maintenant.",
+        finalText:
+          "Si votre entreprise livre beaucoup, mais ne paraît pas valoir ce qu'elle mérite, elle perd du marché chaque jour.",
       },
     }),
     []
@@ -92,23 +154,22 @@ export default function Home() {
   const services = [
     {
       title: "Diagnóstico",
-      content:
-        "Análise estratégica completa da presença digital, gargalos invisíveis e plano prático de crescimento.",
+      content: "Clareza total sobre por que você não vende mais.",
     },
     {
       title: "Áxis",
       content:
-        "Posicionamento premium, clareza de oferta, LinkedIn estratégico e autoridade digital.",
+        "Base estratégica para posicionamento premium e autoridade real.",
     },
     {
       title: "Áxis +",
       content:
-        "Leads qualificados, CTAs inteligentes, mensagens comerciais e funil inicial.",
+        "Transformação da presença em geração de leads qualificados.",
     },
     {
       title: "Áxis Vanguard",
       content:
-        "Camada executiva máxima: narrativa premium, refinamento comercial e percepção de alto valor.",
+        "Crescimento estruturado com percepção de alto valor e escala.",
     },
   ];
 
@@ -141,7 +202,6 @@ export default function Home() {
 
   return (
     <>
-      {/* OPENING */}
       <AnimatePresence>
         {loading && (
           <motion.div
@@ -162,10 +222,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <main
-        className={`${sans.className} bg-black text-white overflow-x-hidden`}
-      >
-        {/* Glow Cursor */}
+      <main className={`${sans.className} bg-black text-white overflow-x-hidden`}>
         <div
           className="pointer-events-none fixed z-0 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
           style={{
@@ -174,10 +231,8 @@ export default function Home() {
           }}
         />
 
-        {/* Background */}
         <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_25%)]" />
 
-        {/* Particles */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute left-[15%] top-[18%] h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
           <div className="absolute left-[75%] top-[28%] h-1 w-1 rounded-full bg-white animate-pulse" />
@@ -185,12 +240,9 @@ export default function Home() {
           <div className="absolute left-[24%] top-[80%] h-1 w-1 rounded-full bg-white/80 animate-pulse" />
         </div>
 
-        {/* NAVBAR */}
         <header className="sticky top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <h1 className={`${serif.className} text-xl`}>
-              North Signal
-            </h1>
+            <h1 className={`${serif.className} text-xl`}>North Signal</h1>
 
             <div className="flex items-center gap-3">
               <select
@@ -222,8 +274,16 @@ export default function Home() {
           </div>
         </header>
 
-        {/* HERO */}
         <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="mb-5 max-w-2xl text-sm uppercase tracking-[0.22em] text-blue-300/80"
+          >
+            {t.pain}
+          </motion.p>
+
           <motion.h2
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -238,19 +298,19 @@ export default function Home() {
           </p>
 
           <a
-            href="https://wa.me/5541987268822"
+            href={whatsappLink}
             target="_blank"
+            rel="noopener noreferrer"
             className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.35)]"
           >
             {t.button}
           </a>
         </section>
 
-        {/* SERVICES */}
         <section className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-14 text-center">
             <h3 className={`${serif.className} text-4xl md:text-5xl`}>
-              Soluções Estratégicas
+              {t.servicesTitle}
             </h3>
           </div>
 
@@ -258,14 +318,9 @@ export default function Home() {
             {services.map((item, i) => (
               <motion.div
                 key={i}
-                whileHover={{
-                  y: -10,
-                  scale: 1.03,
-                }}
+                whileHover={{ y: -10, scale: 1.03 }}
                 transition={{ duration: 0.3 }}
-                onClick={() =>
-                  setOpenCard(openCard === i ? null : i)
-                }
+                onClick={() => setOpenCard(openCard === i ? null : i)}
                 className="cursor-pointer rounded-3xl border border-white/10 bg-white/5 p-7 shadow-2xl backdrop-blur-xl"
               >
                 <h4 className="text-xl font-semibold">{item.title}</h4>
@@ -274,10 +329,7 @@ export default function Home() {
                   {openCard === i && (
                     <motion.p
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
+                      animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       className="mt-4 overflow-hidden text-sm leading-7 text-white/70"
                     >
@@ -290,7 +342,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TIMELINE */}
         <section className="mx-auto max-w-6xl px-6 py-24 text-center">
           <p className="text-sm uppercase tracking-[0.35em] text-blue-300/70">
             Jornada da Marca
@@ -318,29 +369,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA */}
+        <section className="mx-auto grid max-w-6xl gap-8 px-6 py-20 md:grid-cols-2">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+          >
+            <h3 className={`${serif.className} text-3xl`}>
+              {t.forWhoTitle}
+            </h3>
+            <p className="mt-5 leading-7 text-white/70">{t.forWho}</p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="rounded-3xl border border-blue-400/20 bg-blue-500/5 p-8 backdrop-blur-xl"
+          >
+            <h3 className={`${serif.className} text-3xl`}>
+              {t.notForTitle}
+            </h3>
+            <p className="mt-5 leading-7 text-white/70">{t.notFor}</p>
+          </motion.div>
+        </section>
+
         <section className="mx-auto max-w-5xl px-6 pb-28 pt-10 text-center">
           <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-14 backdrop-blur-xl">
             <h3 className={`${serif.className} text-4xl md:text-5xl`}>
-              Sua próxima fase começa agora.
+              {t.finalTitle}
             </h3>
 
             <p className="mx-auto mt-5 max-w-2xl text-white/70">
-              Se sua empresa entrega muito, mas ainda não parece valer o que merece,
-              a North Signal corrige isso.
+              {t.finalText}
             </p>
 
             <a
-              href="https://wa.me/5541987268822"
+              href={whatsappLink}
               target="_blank"
+              rel="noopener noreferrer"
               className="mt-10 inline-block rounded-full bg-blue-500 px-8 py-4 text-sm font-semibold text-white transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.45)]"
             >
-              Solicitar Diagnóstico
+              {t.button}
             </a>
           </div>
         </section>
 
-        {/* AYDA */}
         <AnimatePresence>
           {ayda && (
             <motion.div
@@ -372,8 +443,9 @@ export default function Home() {
                 </button>
 
                 <a
-                  href="https://wa.me/5541987268822"
+                  href={whatsappLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/10"
                 >
                   <MessageCircle size={18} />
@@ -384,9 +456,11 @@ export default function Home() {
           )}
         </AnimatePresence>
 
-        {/* FOOTER */}
-        <footer className="border-t border-white/10 py-10 text-center text-sm text-white/40">
-          © {new Date().getFullYear()} North Signal
+        <footer className="border-t border-white/10 py-10 text-center text-sm text-white/45">
+          <p>North Signal © 2026</p>
+          <p className="mt-2 text-white/35">
+            Posicionamento • Conversão • Autoridade
+          </p>
         </footer>
       </main>
     </>
