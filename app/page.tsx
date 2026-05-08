@@ -55,9 +55,6 @@ export default function Home() {
         problemTitle: "Competência sem percepção continua invisível.",
         problemText:
           "Muitas empresas entregam muito, mas ainda são percebidas como comuns. A AYDAXYS atua no reposicionamento para transformar clareza, presença e percepção em crescimento estruturado.",
-        methodTitle: "Método AXYS",
-        methodText:
-          "Reposicionamento através de três eixos fundamentais: cultura, estratégia e identidade.",
         servicesTitle: "Soluções Estratégicas",
         forWhoTitle: "Para quem é",
         forWho:
@@ -78,9 +75,6 @@ export default function Home() {
         problemTitle: "Competence without perception remains invisible.",
         problemText:
           "Many companies deliver real value but are still perceived as ordinary. AYDAXYS works on repositioning to transform clarity, presence and perception into structured growth.",
-        methodTitle: "AXYS Method",
-        methodText:
-          "Repositioning through three fundamental axes: culture, strategy and identity.",
         servicesTitle: "Strategic Solutions",
         forWhoTitle: "Who it is for",
         forWho:
@@ -101,9 +95,6 @@ export default function Home() {
         problemTitle: "Competencia sin percepción sigue invisible.",
         problemText:
           "Muchas empresas entregan mucho, pero siguen siendo percibidas como comunes. AYDAXYS trabaja el reposicionamiento para transformar claridad, presencia y percepción en crecimiento estructurado.",
-        methodTitle: "Método AXYS",
-        methodText:
-          "Reposicionamiento a través de tres ejes fundamentales: cultura, estrategia e identidad.",
         servicesTitle: "Soluciones Estratégicas",
         forWhoTitle: "Para quién es",
         forWho:
@@ -124,9 +115,6 @@ export default function Home() {
         problemTitle: "Competenza senza percezione resta invisibile.",
         problemText:
           "Molte aziende offrono valore reale, ma vengono ancora percepite come comuni. AYDAXYS lavora sul riposizionamento per trasformare chiarezza, presenza e percezione in crescita strutturata.",
-        methodTitle: "Metodo AXYS",
-        methodText:
-          "Riposizionamento attraverso tre assi fondamentali: cultura, strategia e identità.",
         servicesTitle: "Soluzioni Strategiche",
         forWhoTitle: "Per chi è",
         forWho:
@@ -147,9 +135,6 @@ export default function Home() {
         problemTitle: "La compétence sans perception reste invisible.",
         problemText:
           "Beaucoup d’entreprises livrent une vraie valeur, mais restent perçues comme ordinaires. AYDAXYS travaille le repositionnement pour transformer clarté, présence et perception en croissance structurée.",
-        methodTitle: "Méthode AXYS",
-        methodText:
-          "Repositionnement à travers trois axes fondamentaux : culture, stratégie et identité.",
         servicesTitle: "Solutions Stratégiques",
         forWhoTitle: "Pour qui",
         forWho:
@@ -187,21 +172,6 @@ export default function Home() {
       title: "Áxis Vanguard",
       content:
         "Camada executiva de crescimento, refinamento de percepção e expansão estratégica.",
-    },
-  ];
-
-  const axis = [
-    {
-      title: "Áxis I — Cultura",
-      text: "Alinhamento interno, visão, direção e maturidade estratégica.",
-    },
-    {
-      title: "Áxis II — Estratégia",
-      text: "Diferenciação, modelo de crescimento e proposta de valor.",
-    },
-    {
-      title: "Áxis III — Identidade",
-      text: "Percepção de mercado, comunicação e presença de autoridade.",
     },
   ];
 
@@ -336,37 +306,6 @@ export default function Home() {
         <p className="mx-auto mt-6 max-w-3xl leading-8 text-white/70">
           {t.problemText}
         </p>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-14 text-center">
-          <p className="text-sm uppercase tracking-[0.35em] text-blue-300/70">
-            Estrutura
-          </p>
-
-          <h3 className={`${serif.className} mt-4 text-4xl md:text-5xl`}>
-            {t.methodTitle}
-          </h3>
-
-          <p className="mx-auto mt-5 max-w-2xl text-white/70">
-            {t.methodText}
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          {axis.map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl"
-            >
-              <h4 className={`${serif.className} text-2xl`}>
-                {item.title}
-              </h4>
-              <p className="mt-5 leading-7 text-white/65">{item.text}</p>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-24">
