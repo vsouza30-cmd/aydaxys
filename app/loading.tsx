@@ -10,7 +10,7 @@ export default function Loading() {
         animate={{ opacity: 1 }}
         className="text-white text-sm tracking-[0.4em]"
       >
-        NORTH SIGNAL
+        AYDAXYS
       </motion.div>
     </div>
   );

@@ -291,7 +291,12 @@ export default function Home() {
           className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.35)]"
         >
           {t.button}
-        </a>
+        </a><a
+  href="/projetos-digitais"
+  className="mt-4 inline-block rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+>
+  Conhecer Projetos Digitais
+</a>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
