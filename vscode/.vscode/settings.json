@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "tailwindCSS.classAttributes": ["class", "className"],
+  "tailwindCSS.validate": true,
+
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  "tailwindCSS.lint.invalidTailwindDirective": "ignore",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}
