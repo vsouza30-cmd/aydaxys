@@ -94,11 +94,11 @@ export default function Home() {
         button: "Solicitar Diagnóstico Estratégico",
         problemTitle: "Competencia sin percepción sigue invisible.",
         problemText:
-          "Muchas empresas entregan mucho, pero siguen siendo percibidas como comunes. AYDAXYS trabaja el reposicionamiento para transformar claridad, presencia y percepción en crecimiento estruturado.",
+          "Muchas empresas entregan mucho, pero siguen siendo percibidas como comunes. AYDAXYS trabaja el reposicionamiento para transformar claridad, presencia y percepción en crecimiento estructurado.",
         servicesTitle: "Soluciones Estratégicas",
         forWhoTitle: "Para quién es",
         forWho:
-          "Empresas B2B con buen servicio, visión de crescimento e necessidade de fortalecer presença, autoridade e demanda qualificada.",
+          "Empresas B2B con buen servicio, visión de crecimiento y necesidad de fortalecer presencia, autoridad y demanda calificada.",
         notForTitle: "No es para",
         notFor:
           "Quien busca fórmulas mágicas, volumen sin estrategia, seguidores vacíos o no ejecuta con consistencia.",
@@ -138,7 +138,7 @@ export default function Home() {
         servicesTitle: "Solutions Stratégiques",
         forWhoTitle: "Pour qui",
         forWho:
-          "Entreprises B2B avec uma vraie expertise, une vision de croissance et le besoin de renforcer présence, autorité et demande qualifiée.",
+          "Entreprises B2B avec une vraie expertise, une vision de croissance et le besoin de renforcer présence, autorité et demande qualifiée.",
         notForTitle: "Ce n'est pas pour",
         notFor:
           "Ceux qui cherchent des formules magiques, du volume sans stratégie, des abonnés vides ou aucune exécution constante.",
@@ -203,20 +203,9 @@ export default function Home() {
   };
 
   return (
-    <main className={`${sans.className} bg-[#0B0B0C] text-[#EDEDED] overflow-x-hidden relative`}>
-      
-      {/* Grid Tecnológico Sutil */}
-      <div 
-        className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" 
-        style={{ 
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.5) 1px, transparent 1px)`, 
-          backgroundSize: '48px 48px' 
-        }} 
-      />
-
-      {/* Mouse Glow Interativo */}
+    <main className={`${sans.className} bg-[#0B0B0C] text-[#EDEDED] overflow-x-hidden`}>
       <div
-        className="pointer-events-none fixed z-10 hidden h-80 w-80 rounded-full bg-blue-500/10 blur-3xl md:block"
+        className="pointer-events-none fixed z-0 hidden h-80 w-80 rounded-full bg-blue-500/10 blur-3xl md:block"
         style={{
           left: mouse.x - 160,
           top: mouse.y - 160,
@@ -225,21 +214,10 @@ export default function Home() {
 
       <div className="fixed inset-0 -z-30 bg-[#0B0B0C]" />
 
-      {/* Glow Azul Profundo Ampliado (Estilo OpenAI, Linear, Stripe) */}
-      <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
-        {/* Grande esfera central superior */}
-        <div className="absolute top-[-25%] left-1/2 -translate-x-1/2 h-162.5 w-237.5 rounded-full bg-blue-600/15 blur-[140px]" />
-        
-        {/* Glow assimétrico intermediário */}
-        <div className="absolute top-[35%] right-[-15%] h-137.5 w-137.5 rounded-full bg-indigo-500/10 blur-[130px]" />
+      <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_26%)]" />
 
-        {/* Brilho profundo inferior na CTA */}
-        <div className="absolute bottom-[8%] left-[5%] h-150 w-175 rounded-full bg-blue-500/12 blur-[150px]" />
-      </div>
+      <div className="fixed inset-0 -z-10 opacity-[0.05] bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.8)_50%,transparent_100%)]" />
 
-      <div className="fixed inset-0 -z-10 opacity-[0.03] bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.8)_50%,transparent_100%)]" />
-
-      {/* Partículas sutis */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[15%] top-[18%] h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
         <div className="absolute left-[75%] top-[28%] h-1 w-1 rounded-full bg-white animate-pulse" />
@@ -247,10 +225,9 @@ export default function Home() {
         <div className="absolute left-[24%] top-[80%] h-1 w-1 rounded-full bg-white/80 animate-pulse" />
       </div>
 
-      {/* Menu Flutuante com Glassmorphism Real e Brilho Interno */}
-      <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full border border-white/8 bg-black/40 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.1)]">
-        <div className="mx-auto flex items-center justify-between gap-3 px-6 py-3.5">
-          <h1 className={`${serif.className} text-xl tracking-wide bg-linear-to-r from-white via-white to-white/60 bg-clip-text text-transparent`}>
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B0B0C]/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
+          <h1 className={`${serif.className} text-xl tracking-wide`}>
             AYDAXYS
           </h1>
 
@@ -258,7 +235,7 @@ export default function Home() {
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value as Lang)}
-              className="rounded-full border border-white/10 bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur-md outline-none md:px-4 md:text-sm"
+              className="rounded-full border border-white/15 bg-[#0B0B0C] px-3 py-2 text-xs text-white md:px-4 md:text-sm"
             >
               <option value="pt">Português</option>
               <option value="en">English</option>
@@ -267,7 +244,7 @@ export default function Home() {
               <option value="fr">Français</option>
             </select>
 
-            <button className="rounded-full border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5 transition md:px-4 md:text-sm">
+            <button className="rounded-full border border-white/15 px-3 py-2 text-xs hover:bg-white/10 transition md:px-4 md:text-sm">
               <Languages size={16} />
             </button>
 
@@ -276,7 +253,7 @@ export default function Home() {
                 setAyda(true);
                 speakAyda();
               }}
-              className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1.5 text-xs text-blue-300 hover:bg-blue-500/20 transition md:px-4 md:text-sm font-medium tracking-wide"
+              className="rounded-full border border-blue-400/40 px-3 py-2 text-xs hover:bg-blue-500/10 transition md:px-4 md:text-sm"
             >
               AYDA
             </button>
@@ -284,8 +261,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-36 pb-24 text-center z-10">
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
@@ -299,7 +275,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className={`${serif.className} max-w-5xl text-4xl leading-tight md:text-7xl bg-linear-to-b from-white via-[#EDEDED] to-white/50 bg-clip-text text-transparent`}
+          className={`${serif.className} max-w-5xl text-4xl leading-tight md:text-7xl`}
         >
           {t.title}
         </motion.h2>
@@ -312,47 +288,19 @@ export default function Home() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.4)]"
+          className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.35)]"
         >
           {t.button}
         </a>
-
-        {/* Elemento 3D / Painel Holográfico Flutuante Interativo */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40, rotateX: 15, rotateY: -8 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 12, rotateY: -4 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          style={{ transformStyle: "preserve-3d" }}
-          className="relative mx-auto mt-20 w-full max-w-md rounded-2xl border border-blue-500/20 bg-blue-950/5 p-6 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_40px_rgba(59,130,246,0.15),inset_0_1px_1px_rgba(255,255,255,0.05)] text-left"
-        >
-          {/* Brilho interno na extremidade superior */}
-          <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-blue-400/40 to-transparent" />
-
-          <div className="mb-5 flex items-center justify-between">
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400/80">AYDAXYS ENGINE // PLATFORM_STATUS</span>
-            <div className="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_#3b82f6] animate-pulse" />
-          </div>
-
-          <div className="space-y-4 font-sans">
-            <div className="flex justify-between border-b border-white/4 pb-3 items-center">
-              <span className="text-white/50 text-xs tracking-wide">Demanda Média</span>
-              <span className="font-mono text-blue-400 font-semibold text-sm tracking-wider">+43 Leads Qualificados</span>
-            </div>
-            <div className="flex justify-between border-b border-white/4 pb-3 items-center">
-              <span className="text-white/50 text-xs tracking-wide">Performance Comercial</span>
-              <span className="font-mono text-blue-400 font-semibold text-sm tracking-wider">+12 Diagnósticos</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-white/50 text-xs tracking-wide">Operações Ativas</span>
-              <span className="font-mono text-blue-400 font-semibold text-sm tracking-wider">+4 Empresas em análise</span>
-            </div>
-          </div>
-        </motion.div>
+        <a
+  href="/projetos-digitais"
+  className="mt-4 inline-block rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+>
+  Conhecer Projetos Digitais
+</a>
       </section>
 
-      {/* SECTION REPOSICIONAMENTO */}
-      <section className="mx-auto max-w-6xl px-6 py-20 text-center relative z-10">
+      <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <p className="text-sm uppercase tracking-[0.35em] text-blue-300/70">
           Reposicionamento
         </p>
@@ -366,8 +314,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* SECTION SOLUÇÕES ESTRATÉGICAS */}
-      <section className="mx-auto max-w-7xl px-6 py-24 relative z-10">
+      <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-14 text-center">
           <h3 className={`${serif.className} text-4xl md:text-5xl`}>
             {t.servicesTitle}
@@ -378,10 +325,10 @@ export default function Home() {
           {services.map((item, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -10, scale: 1.02 }}
+              whileHover={{ y: -10, scale: 1.03 }}
               transition={{ duration: 0.3 }}
               onClick={() => setOpenCard(openCard === i ? null : i)}
-              className="cursor-pointer rounded-3xl border border-white/5 bg-white/2 p-7 shadow-2xl backdrop-blur-xl hover:border-white/10 transition-colors duration-300"
+              className="cursor-pointer rounded-3xl border border-white/10 bg-white/5 p-7 shadow-2xl backdrop-blur-xl"
             >
               <h4 className="text-xl font-semibold">{item.title}</h4>
 
@@ -402,11 +349,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION PARA QUEM É / NÃO É */}
-      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-20 md:grid-cols-2 relative z-10">
+      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-20 md:grid-cols-2">
         <motion.div
-          whileHover={{ y: -6, scale: 1.01 }}
-          className="rounded-3xl border border-white/5 bg-white/2 p-8 backdrop-blur-xl"
+          whileHover={{ y: -8, scale: 1.02 }}
+          className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
         >
           <h3 className={`${serif.className} text-3xl`}>
             {t.forWhoTitle}
@@ -415,8 +361,8 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          whileHover={{ y: -6, scale: 1.01 }}
-          className="rounded-3xl border border-blue-500/10 bg-blue-500/2 p-8 backdrop-blur-xl"
+          whileHover={{ y: -8, scale: 1.02 }}
+          className="rounded-3xl border border-blue-400/20 bg-blue-500/5 p-8 backdrop-blur-xl"
         >
           <h3 className={`${serif.className} text-3xl`}>
             {t.notForTitle}
@@ -425,14 +371,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="mx-auto max-w-5xl px-6 py-24 relative z-10">
-        <div className="rounded-3xl border border-white/5 bg-white/2 px-8 py-16 text-center backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_50px_rgba(59,130,246,0.1),inset_0_1px_1px_rgba(255,255,255,0.02)]">
-          <h2 className={`${serif.className} text-4xl md:text-5xl`}>
+      <section className="mx-auto max-w-5xl px-6 pb-28 pt-10 text-center">
+        <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-14 backdrop-blur-xl">
+          <h3 className={`${serif.className} text-4xl md:text-5xl`}>
             {t.finalTitle}
-          </h2>
+          </h3>
 
-          <p className="mx-auto mt-6 max-w-2xl text-white/70">
+          <p className="mx-auto mt-5 max-w-2xl text-white/70">
             {t.finalText}
           </p>
 
@@ -440,41 +385,40 @@ export default function Home() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-block rounded-full bg-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-[0_0_35px_rgba(59,130,246,0.45)]"
+            className="mt-10 inline-block rounded-full bg-blue-500 px-8 py-4 text-sm font-semibold text-white transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.45)]"
           >
             {t.button}
           </a>
         </div>
       </section>
 
-      {/* ASSISTENTE AYDA IA */}
       <AnimatePresence>
         {ayda && (
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 35 }}
-            className="fixed bottom-6 right-4 z-50 w-[calc(100%-2rem)] max-w-80 rounded-3xl border border-blue-500/20 bg-black/90 p-6 backdrop-blur-xl md:right-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+            className="fixed bottom-6 right-4 z-50 w-[calc(100%-2rem)] max-w-80 rounded-3xl border border-blue-400/20 bg-black/90 p-6 backdrop-blur-xl md:right-6"
           >
             <div className="mb-4 flex items-center justify-between">
-              <h4 className="font-semibold tracking-wide text-sm text-blue-400">AYDA IA</h4>
+              <h4 className="font-semibold">AYDA IA</h4>
 
-              <button onClick={() => setAyda(false)} className="text-white/70 hover:text-white transition">
+              <button onClick={() => setAyda(false)}>
                 <X size={18} />
               </button>
             </div>
 
-            <div className="space-y-2 text-sm">
+            <div className="space-y-3 text-sm">
               <button
                 onClick={speakAyda}
-                className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5 transition text-white/80 hover:text-white"
+                className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/10"
               >
-                <Volume2 size={18} className="text-blue-400" />
+                <Volume2 size={18} />
                 Ler Página
               </button>
 
-              <button className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5 transition text-white/80 hover:text-white">
-                <Accessibility size={18} className="text-blue-400" />
+              <button className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/10">
+                <Accessibility size={18} />
                 Libras
               </button>
 
@@ -482,9 +426,9 @@ export default function Home() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5 transition text-white/80 hover:text-white"
+                className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/10"
               >
-                <MessageCircle size={18} className="text-blue-400" />
+                <MessageCircle size={18} />
                 Suporte
               </a>
             </div>
@@ -492,10 +436,9 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 text-center relative z-10 text-sm text-white/60">
+      <footer className="border-t border-white/10 py-10 text-center text-sm text-white/70">
         <p>AYDAXYS © 2026</p>
-        <p className="mt-2 text-white/40">
+        <p className="mt-2 text-white/50">
           Posicionamento • Conversão • Autoridade
         </p>
       </footer>
