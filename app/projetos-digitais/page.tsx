@@ -86,26 +86,33 @@ export default function ProjetosDigitais() {
 
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
             Realizamos um diagnóstico estratégico para identificar
-            oportunidades de posicionamento, presença digital e
-            crescimento da sua empresa.
+            oportunidades de posicionamento, presença digital e crescimento
+            da sua empresa.
           </p>
 
-          <a
-            href="https://wa.me/5541999999999"
-            className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-medium text-black transition hover:opacity-90"
-          >
-            Solicitar Diagnóstico Estratégico
-          </a>
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <a
+              href="/diagnostico"
+              className="inline-block rounded-full bg-blue-500 px-10 py-4 text-sm font-semibold text-white transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.45)]"
+            >
+              Solicitar Diagnóstico Gratuito
+            </a>
+
+            <p className="max-w-xl text-sm text-white/60">
+              Receba uma análise inicial do posicionamento da sua empresa e
+              descubra qual estrutura digital faz mais sentido para o seu
+              momento de crescimento.
+            </p>
+
+            <a
+              href="/"
+              className="mt-4 text-white/60 transition hover:text-white"
+            >
+              ← Voltar para página inicial
+            </a>
+          </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <a
-            href="/"
-            className="text-white/60 transition hover:text-white"
-          >
-            ← Voltar para página inicial
-          </a>
-        </div>
       </section>
     </main>
   );

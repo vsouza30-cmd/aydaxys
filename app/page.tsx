@@ -1,19 +1,18 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Accessibility,
   Volume2,
-  Languages,
   MessageCircle,
   X,
 } from "lucide-react";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 
-const serif = Playfair_Display({
+const heading = Syne({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const sans = Inter({
@@ -21,136 +20,71 @@ const sans = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-type Lang = "pt" | "en" | "es" | "it" | "fr";
-
 const whatsappLink =
   "https://wa.me/5541987268822?text=Olá,%20quero%20entender%20como%20melhorar%20meu%20posicionamento%20com%20a%20AYDAXYS";
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("pt");
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [ayda, setAyda] = useState(false);
-  const [openCard, setOpenCard] = useState<number | null>(null);
-
+ const [openCard, setOpenCard] =
+  useState<number | null>(null);
   useEffect(() => {
     const move = (e: MouseEvent) => {
-      setMouse({ x: e.clientX, y: e.clientY });
+      setMouse({
+        x: e.clientX,
+        y: e.clientY,
+      });
     };
 
     window.addEventListener("mousemove", move);
 
     return () => {
-      window.removeEventListener("mousemove", move);
+      window.removeEventListener(
+        "mousemove",
+        move
+      );
     };
   }, []);
 
-  const texts = useMemo(
-    () => ({
-      pt: {
-        label: "Consultoria Estratégica B2B",
-        title: "Onde a competência encontra valor real.",
-        desc:
-          "Empresas B2B que saem da guerra de preços e constroem presença com demanda qualificada.",
-        button: "Solicitar Diagnóstico Estratégico",
-        problemTitle: "Competência sem percepção continua invisível.",
-        problemText:
-          "Muitas empresas entregam muito, mas ainda são percebidas como comuns. A AYDAXYS atua no reposicionamento para transformar clareza, presença e percepção em crescimento estruturado.",
-        servicesTitle: "Soluções Estratégicas",
-        forWhoTitle: "Para quem é",
-        forWho:
-          "Empresas B2B com bom serviço, visão de crescimento e necessidade de fortalecer presença, autoridade e demanda qualificada.",
-        notForTitle: "Não é para",
-        notFor:
-          "Quem busca fórmula mágica, volume sem estratégia, seguidores vazios ou não está disposto a executar com consistência.",
-        finalTitle: "Sua próxima fase começa pelo reposicionamento.",
-        finalText:
-          "Se sua empresa entrega valor, mas o mercado ainda não percebe, você está competindo por preço quando poderia competir por autoridade.",
-      },
-      en: {
-        label: "Strategic B2B Consultancy",
-        title: "Where competence meets real value.",
-        desc:
-          "B2B companies leaving price wars and building presence with qualified demand.",
-        button: "Request Strategic Diagnosis",
-        problemTitle: "Competence without perception remains invisible.",
-        problemText:
-          "Many companies deliver real value but are still perceived as ordinary. AYDAXYS works on repositioning to transform clarity, presence and perception into structured growth.",
-        servicesTitle: "Strategic Solutions",
-        forWhoTitle: "Who it is for",
-        forWho:
-          "B2B companies with strong delivery, growth vision and the need to strengthen presence, authority and qualified demand.",
-        notForTitle: "Who it is not for",
-        notFor:
-          "Those looking for magic formulas, volume without strategy, empty followers or no consistent execution.",
-        finalTitle: "Your next phase starts with repositioning.",
-        finalText:
-          "If your company delivers value but the market does not perceive it yet, you are competing on price when you could compete on authority.",
-      },
-      es: {
-        label: "Consultoría Estratégica B2B",
-        title: "Donde la competencia encuentra valor real.",
-        desc:
-          "Empresas B2B que salen de la guerra de precios y construyen presencia con demanda calificada.",
-        button: "Solicitar Diagnóstico Estratégico",
-        problemTitle: "Competencia sin percepción sigue invisible.",
-        problemText:
-          "Muchas empresas entregan mucho, pero siguen siendo percibidas como comunes. AYDAXYS trabaja el reposicionamiento para transformar claridad, presencia y percepción en crecimiento estructurado.",
-        servicesTitle: "Soluciones Estratégicas",
-        forWhoTitle: "Para quién es",
-        forWho:
-          "Empresas B2B con buen servicio, visión de crecimiento y necesidad de fortalecer presencia, autoridad y demanda calificada.",
-        notForTitle: "No es para",
-        notFor:
-          "Quien busca fórmulas mágicas, volumen sin estrategia, seguidores vacíos o no ejecuta con consistencia.",
-        finalTitle: "Tu próxima fase empieza con reposicionamiento.",
-        finalText:
-          "Si tu empresa entrega valor, pero el mercado aún no lo percibe, compites por precio cuando podrías competir por autoridad.",
-      },
-      it: {
-        label: "Consulenza Strategica B2B",
-        title: "Dove la competenza incontra valore reale.",
-        desc:
-          "Aziende B2B che escono dalla guerra dei prezzi e costruiscono presenza con domanda qualificata.",
-        button: "Richiedi Diagnosi Strategica",
-        problemTitle: "Competenza senza percezione resta invisibile.",
-        problemText:
-          "Molte aziende offrono valore reale, ma vengono ancora percepite come comuni. AYDAXYS lavora sul riposizionamento per trasformare chiarezza, presenza e percezione in crescita strutturata.",
-        servicesTitle: "Soluzioni Strategiche",
-        forWhoTitle: "Per chi è",
-        forWho:
-          "Aziende B2B con un buon servizio, visione di crescita e necessità di rafforzare presenza, autorità e domanda qualificata.",
-        notForTitle: "Non è per",
-        notFor:
-          "Chi cerca formule magiche, volume senza strategia, follower vuoti o non esegue con costanza.",
-        finalTitle: "La tua prossima fase inizia dal riposizionamento.",
-        finalText:
-          "Se la tua azienda offre valore, ma il mercato non lo percepisce ancora, stai competendo sul prezzo quando potresti competere sull'autorità.",
-      },
-      fr: {
-        label: "Conseil Stratégique B2B",
-        title: "Là où la compétence rencontre sa vraie valeur.",
-        desc:
-          "Entreprises B2B qui sortent de la guerre des prix et construisent une présence avec une demande qualifiée.",
-        button: "Demander un Diagnostic Stratégique",
-        problemTitle: "La compétence sans perception reste invisible.",
-        problemText:
-          "Beaucoup d’entreprises livrent une vraie valeur, mais restent perçues comme ordinaires. AYDAXYS travaille le repositionnement pour transformer clarté, présence et perception en croissance structurée.",
-        servicesTitle: "Solutions Stratégiques",
-        forWhoTitle: "Pour qui",
-        forWho:
-          "Entreprises B2B avec une vraie expertise, une vision de croissance et le besoin de renforcer présence, autorité et demande qualifiée.",
-        notForTitle: "Ce n'est pas pour",
-        notFor:
-          "Ceux qui cherchent des formules magiques, du volume sans stratégie, des abonnés vides ou aucune exécution constante.",
-        finalTitle: "Votre prochaine phase commence par le repositionnement.",
-        finalText:
-          "Si votre entreprise livre de la valeur, mais que le marché ne la perçoit pas encore, vous êtes en concurrence par le prix au lieu de l’autorité.",
-      },
-    }),
-    []
-  );
+  const t = {
+    label: "Consultoria Estratégica B2B",
 
-  const t = texts[lang];
+    title:
+      "Onde a competência encontra valor real.",
+
+    desc:
+      "Empresas B2B que saem da guerra de preços e constroem presença com demanda qualificada.",
+
+    button:
+      "Solicitar Diagnóstico Estratégico",
+
+    problemTitle:
+      "Competência sem percepção continua invisível.",
+
+    problemText:
+      "Muitas empresas entregam muito, mas ainda são percebidas como comuns. A AYDAXYS atua no reposicionamento para transformar clareza, presença e percepção em crescimento estruturado.",
+
+    servicesTitle:
+      "Soluções Estratégicas",
+
+    forWhoTitle:
+      "Para quem é",
+
+    forWho:
+      "Empresas B2B com bom serviço, visão de crescimento e necessidade de fortalecer presença, autoridade e demanda qualificada.",
+
+    notForTitle:
+      "Não é para",
+
+    notFor:
+      "Quem busca fórmula mágica, volume sem estratégia, seguidores vazios ou não está disposto a executar com consistência.",
+
+    finalTitle:
+      "Sua próxima fase começa pelo reposicionamento.",
+
+    finalText:
+      "Se sua empresa entrega valor, mas o mercado ainda não percebe, você está competindo por preço quando poderia competir por autoridade.",
+  };
 
   const services = [
     {
@@ -227,85 +161,79 @@ export default function Home() {
 
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B0B0C]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
-          <h1 className={`${serif.className} text-xl tracking-wide`}>
-            AYDAXYS
+          <h1  className={`${heading.className} text-xl tracking-[0.25em]`}>
+            A Y D A X Y S
           </h1>
 
           <div className="flex flex-wrap items-center gap-2">
-            <select
-              value={lang}
-              onChange={(e) => setLang(e.target.value as Lang)}
-              className="rounded-full border border-white/15 bg-[#0B0B0C] px-3 py-2 text-xs text-white md:px-4 md:text-sm"
-            >
-              <option value="pt">Português</option>
-              <option value="en">English</option>
-              <option value="es">Español</option>
-              <option value="it">Italiano</option>
-              <option value="fr">Français</option>
-            </select>
 
-            <button className="rounded-full border border-white/15 px-3 py-2 text-xs hover:bg-white/10 transition md:px-4 md:text-sm">
-              <Languages size={16} />
-            </button>
+  <a
+    href="/projetos-digitais"
+    className="rounded-full border border-white/15 px-4 py-2 text-xs hover:bg-white/10 transition md:text-sm"
+  >
+    Projetos Digitais
+  </a>
 
-            <button
-              onClick={() => {
-                setAyda(true);
-                speakAyda();
-              }}
-              className="rounded-full border border-blue-400/40 px-3 py-2 text-xs hover:bg-blue-500/10 transition md:px-4 md:text-sm"
-            >
-              AYDA
-            </button>
-          </div>
+  <button
+    onClick={() => {
+      setAyda(true);
+      speakAyda();
+    }}
+    className="rounded-full border border-blue-400/40 px-3 py-2 text-xs hover:bg-blue-500/10 transition md:px-4 md:text-sm"
+  >
+    AYDA
+  </button>
+         </div>
         </div>
       </header>
 
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="mb-5 max-w-2xl text-xs uppercase tracking-[0.24em] text-blue-300/80 md:text-sm"
-        >
-          {t.label}
-        </motion.p>
+  <section className="relative overflow-hidden flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
 
-        <motion.h2
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className={`${serif.className} max-w-5xl text-4xl leading-tight md:text-7xl`}
-        >
-          {t.title}
-        </motion.h2>
+  <motion.p
+    initial={{ opacity: 0, y: 18 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.9 }}
+    className="mb-5 max-w-2xl text-xs uppercase tracking-[0.24em] text-blue-300/80 md:text-sm"
+  >
+    {t.label}
+  </motion.p>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-          {t.desc}
-        </p>
+  <motion.h2
+    initial={{ opacity: 0, y: 35 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className={`${heading.className} max-w-5xl text-4xl leading-tight md:text-7xl`}
+  >
+    {t.title}
+  </motion.h2>
 
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.35)]"
-        >
-          {t.button}
-        </a>
-        <a
-  href="/projetos-digitais"
-  className="mt-4 inline-block rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
->
-  Conhecer Projetos Digitais
-</a>
-      </section>
+  <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+    {t.desc}
+  </p>
 
+  <div className="mt-8 flex flex-wrap justify-center gap-4">
+  <a
+    href="/diagnostico"
+    className="rounded-full bg-blue-500 px-8 py-4 text-sm font-semibold text-white transition hover:scale-105"
+  >
+    Solicitar Diagnóstico Gratuito
+  </a>
+
+  <a
+    href="/projetos-digitais"
+    className="rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+  >
+    Conhecer Projetos Digitais
+  </a>
+</div>
+
+</section>
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <p className="text-sm uppercase tracking-[0.35em] text-blue-300/70">
           Reposicionamento
         </p>
 
-        <h3 className={`${serif.className} mt-4 text-4xl md:text-5xl`}>
+        <h3 className={`${heading.className} mt-4 text-4xl md:text-5xl`}>
           {t.problemTitle}
         </h3>
 
@@ -316,7 +244,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-14 text-center">
-          <h3 className={`${serif.className} text-4xl md:text-5xl`}>
+          <h3 className={`${heading.className} text-4xl md:text-5xl`}>
             {t.servicesTitle}
           </h3>
         </div>
@@ -354,7 +282,7 @@ export default function Home() {
           whileHover={{ y: -8, scale: 1.02 }}
           className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
         >
-          <h3 className={`${serif.className} text-3xl`}>
+          <h3 className={`${heading.className} text-3xl`}>
             {t.forWhoTitle}
           </h3>
           <p className="mt-5 leading-7 text-white/70">{t.forWho}</p>
@@ -364,7 +292,7 @@ export default function Home() {
           whileHover={{ y: -8, scale: 1.02 }}
           className="rounded-3xl border border-blue-400/20 bg-blue-500/5 p-8 backdrop-blur-xl"
         >
-          <h3 className={`${serif.className} text-3xl`}>
+          <h3 className={`${heading.className} text-3xl`}>
             {t.notForTitle}
           </h3>
           <p className="mt-5 leading-7 text-white/70">{t.notFor}</p>
@@ -373,7 +301,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-5xl px-6 pb-28 pt-10 text-center">
         <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-14 backdrop-blur-xl">
-          <h3 className={`${serif.className} text-4xl md:text-5xl`}>
+          <h3 className={`${heading.className} text-4xl md:text-5xl`}>
             {t.finalTitle}
           </h3>
 
@@ -382,9 +310,7 @@ export default function Home() {
           </p>
 
           <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
+  href="/diagnostico"
             className="mt-10 inline-block rounded-full bg-blue-500 px-8 py-4 text-sm font-semibold text-white transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.45)]"
           >
             {t.button}
@@ -423,7 +349,7 @@ export default function Home() {
               </button>
 
               <a
-                href={whatsappLink}
+                href="/diagnostico"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/10"
