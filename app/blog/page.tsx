@@ -13,7 +13,7 @@ export default function Blog() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-white/70">
             Insights sobre posicionamento, autoridade, percepção de valor,
-            demanda qualificada e crescimento empresarial.
+            demanda qualificada e crescimento empresarial para líderes que buscam resultados reais.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export default function Blog() {
 
             <p className="mt-4 text-white/70">
               Empresas excelentes continuam perdendo margem porque o mercado
-              não percebe o valor que entregam.
+              não percebe o valor que entregam. Entenda como sair dessa armadilha.
             </p>
           </a>
 
@@ -43,7 +43,7 @@ export default function Blog() {
 
             <p className="mt-4 text-white/70">
               Entenda por que empresas fortes são percebidas de forma
-              diferente pelo mercado.
+              diferente pelo mercado. Autoridade é a chave para reduzir objeções e fortalecer negociações.
             </p>
           </a>
 
