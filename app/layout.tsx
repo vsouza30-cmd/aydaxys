@@ -24,9 +24,7 @@ export const metadata: Metadata = {
   creator: "AYDAXYS",
   openGraph: {
     title: "AYDAXYS",
-    description:
-      "Onde a competência encontra valor real.",
-    url: "https://north-signal-chi.vercel.app",
+    description: "Onde a competência encontra valor real.",
     siteName: "AYDAXYS",
     locale: "pt_BR",
     type: "website",
