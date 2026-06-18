@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://SEU-DOMINIO.vercel.app/sitemap.xml",
+    sitemap: "https://aydaxys.vercel.app/sitemap.xml",
   };
 }

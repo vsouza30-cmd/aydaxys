@@ -1,15 +1,25 @@
 export default function sitemap() {
+  const baseUrl = "https://aydaxys.vercel.app";
+
   return [
     {
-      url: "https://SEU-DOMINIO.vercel.app",
+      url: baseUrl,
       lastModified: new Date(),
     },
     {
-      url: "https://SEU-DOMINIO.vercel.app/projetos-digitais",
+      url: `${baseUrl}/projetos-digitais`,
       lastModified: new Date(),
     },
     {
-      url: "https://SEU-DOMINIO.vercel.app/diagnostico",
+      url: `${baseUrl}/diagnostico`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/login`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/dashboard`,
       lastModified: new Date(),
     },
   ];
