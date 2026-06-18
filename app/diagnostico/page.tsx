@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function Diagnostico() {
   const [loading, setLoading] = useState(false);
@@ -23,19 +24,18 @@ export default function Diagnostico() {
       desafio: (form.desafio as HTMLTextAreaElement).value,
     };
 
-    const response = await fetch("/api/diagnostico", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const { error } = await supabase
+    .from("diagnosticos")
+    .insert([data]);
 
     setLoading(false);
 
-    if (response.ok) {
+    if (!error) {
       setEnviado(true);
       form.reset();
+    } else {
+      console.log(error)
+      alert(JSON.stringify(error));
     }
   }
 
