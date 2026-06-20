@@ -1,0 +1,3 @@
+import Image from "next/image";
+<Image src="/logo.svg" alt="Aydaxis" width={400} height={120} />
+/>

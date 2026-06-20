@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} bg-black text-white`}>
+      <body className={inter.className}>
         {children}
 
         <Script
@@ -51,7 +51,6 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-RXCC50JJSK');
           `}
         </Script>

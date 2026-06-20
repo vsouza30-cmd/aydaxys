@@ -40,10 +40,10 @@ export default function Diagnostico() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#FAFAFA] text-black">
       <section className="mx-auto max-w-4xl px-6 py-24">
         <div className="text-center">
-          <span className="text-sm uppercase tracking-[0.3em] text-white/50">
+          <span className="text-sm uppercase tracking-[0.3em] text-blue-600">
             AYDAXYS
           </span>
 
@@ -51,7 +51,7 @@ export default function Diagnostico() {
             Diagnóstico Estratégico
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-black/70">
             Responda as perguntas abaixo e receba uma análise inicial
             sobre posicionamento, autoridade e oportunidades de crescimento.
           </p>
@@ -63,27 +63,27 @@ export default function Diagnostico() {
               Diagnóstico enviado com sucesso.
             </h2>
 
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-black/70">
               Recebemos suas informações e entraremos em contato.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="mt-16 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-10"
+            className="mt-16 space-y-6 rounded-3xl border border-black/10 bg-white p-10 shadow-lg"
           >
             <input
               name="nome"
               placeholder="Nome"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             />
 
             <input
               name="empresa"
               placeholder="Empresa"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             />
 
             <input
@@ -91,28 +91,28 @@ export default function Diagnostico() {
               type="email"
               placeholder="E-mail"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             />
 
             <input
               name="telefone"
               placeholder="Telefone"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black"
             />
 
             <input
               name="segmento"
               placeholder="Segmento"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black"
             />
 
             <input
               name="faturamento"
               placeholder="Faturamento mensal"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4"
             />
 
             <textarea
@@ -120,13 +120,13 @@ export default function Diagnostico() {
               rows={5}
               placeholder="Qual é o principal desafio da empresa atualmente?"
               required
-              className="w-full rounded-xl border border-white/10 bg-black px-4 py-4"
+              className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black"
             />
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-full bg-white px-8 py-4 font-medium text-black transition hover:opacity-90"
+              className="w-full rounded-full bg-blue-500 px-8 py-4 font-medium text-white transition hover:scale-105 shadow-[0_0_25px_rgba(59,130,246,0.35)]"
             >
               {loading
                 ? "Enviando..."
@@ -138,7 +138,7 @@ export default function Diagnostico() {
         <div className="mt-12 text-center">
           <a
             href="/"
-            className="text-white/60 transition hover:text-white"
+            className="text-black/60 transition hover:text-black/80"
           >
             ← Voltar para página inicial
           </a>
