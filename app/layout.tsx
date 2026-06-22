@@ -26,12 +26,6 @@ export const metadata: Metadata = {
   authors: [{ name: "AYDAXYS" }],
   creator: "AYDAXYS",
 
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
-
   openGraph: {
     title: "AYDAXYS",
     description: "Onde a competência encontra valor real.",
