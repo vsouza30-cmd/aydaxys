@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -49,6 +50,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={inter.className}>
         {children}
+
+        <Analytics />
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RXCC50JJSK"
