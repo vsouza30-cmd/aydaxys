@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "AYDAXYS",
   description:
     "Consultoria estratégica para empresas B2B que buscam presença, percepção de valor e demanda qualificada.",
+
   keywords: [
     "consultoria estratégica",
     "B2B",
@@ -20,8 +21,16 @@ export const metadata: Metadata = {
     "AYDAXYS",
     "reposicionamento empresarial",
   ],
+
   authors: [{ name: "AYDAXYS" }],
   creator: "AYDAXYS",
+
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+
   openGraph: {
     title: "AYDAXYS",
     description: "Onde a competência encontra valor real.",
